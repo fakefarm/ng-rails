@@ -1,4 +1,5 @@
-var app = angular.module('popcornApp', []);
+var app = angular.module('popcornApp', ['ngRoute']);
+
 app.controller('MoviesController',
     function($scope) {
       $scope.isFavorite = false;
@@ -65,3 +66,16 @@ app.controller('MoviesController',
         }
       ];
     });
+
+app.controller('MovieController', function(){});
+
+app.config(function($routeProvider, $locationProvider) {
+  $routeProvider
+    .when('/',
+      {
+        controller: 'MoviesController',
+        templateUrl: '/templates/movies.html'
+      })
+    .otherwise({redirectTo: '/'});
+});
+

@@ -77,5 +77,6 @@ app.config(function($routeProvider, $locationProvider) {
         templateUrl: '/templates/movies.html'
       })
     .otherwise({redirectTo: '/'});
+    $locationProvider.html5Mode(true);
 });
 

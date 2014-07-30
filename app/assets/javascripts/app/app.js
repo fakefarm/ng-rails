@@ -5,6 +5,11 @@ var app = angular.module('popcornApp', [
 
 app.config(function($routeProvider, $locationProvider) {
   $routeProvider
+    .when('/movie/:movie_id', 
+      {
+        controller: "MovieController",
+        templateUrl: "/templates/movie.html"
+      })
     .when('/',
       {
         controller: 'MoviesController',
@@ -14,6 +19,3 @@ app.config(function($routeProvider, $locationProvider) {
     $locationProvider.html5Mode(true);
 });
 
-app.controller('MovieController', function($scope) {
-  console.log('why do we need this controller?');
-})
